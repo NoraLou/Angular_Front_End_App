@@ -1,7 +1,24 @@
 angular.module('todoService', [])
   .factory('Todos', function(){
+
     var self = {};
-    self.hello = "have a cup of coffee"
+    //might not need this global copy
+    var Todos = {};
+
+    self.hello = "have a cup of coffee";
+
+    self.load = function(){
+
+      if(window.localStorage.getItem('todosIndex') === null){
+        window.localStorage.setItem('todosIndex', Todos.index = 0);
+        console.log('window.localStorage  :', window.localStorage);
+      }else{
+        console.log('already initiated !!')
+      }
+
+    }//load
+
+
 
 
 
