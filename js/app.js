@@ -6,9 +6,11 @@
   var initData = function(){
    console.log("starting localStorage*********")
    console.log(window.localStorage)
-    if(window.localStorage.getItem('Todos') === null){
+    if(window.localStorage.getItem('todosIndex') === null){
       var Todos = {};
-      window.localStorage.setItem('Todos', Todos.index = 1);
+      window.localStorage.setItem('todosIndex', Todos.index = 0);
+      console.log("varTodos  ",Todos)
+      console.log(window.localStorage)
     }else{
       console.log('already iniated')
     }
@@ -21,6 +23,8 @@
   angular.module('taskController', [])
 
     .controller('taskController',['$scope', 'Todos', function($scope, Todos){
+
+    //should immediately load the todos from storage, then in a promise function set them to the scope
 
     $scope.hello = Todos.hello
 
