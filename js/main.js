@@ -1,4 +1,4 @@
-var myTodo = angular.module('myTodo',[ ])
+var myTodo = angular.module('myTodo',[])
 
 myTodo.controller('taskController',function($scope, $http){
   $scope.formData = {};
