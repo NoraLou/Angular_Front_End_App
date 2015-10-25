@@ -18,18 +18,21 @@ angular.module('todoService', [])
 
     };
 
-    self.createToDo = function(formData){
+    self.createToDo = function(text){
     //make a new todo
       var counter = Number(window.localStorage.getItem('toDosIndex')) + 1
 
-      console.log("formData ", formData)
+      console.log("text", text)
 
       var toDoEntry = {
-        text : formData,
+        text : text,
         id : counter
       }
-      window.localStorage.setItem('toDosIndex', counter);
+
       console.log(toDoEntry);
+      window.localStorage.setItem('toDosIndex', counter);
+      window.localStorage.setItem('toDo:'+ toDoEntry.id, JSON.stringify(toDoEntry));
+      console.log(localStorage);
 
     };
 
