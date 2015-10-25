@@ -18,20 +18,18 @@
   </head>
 
   <body>
-    <div ng-controller = "taskController">
+    <div ng-controller = "mainController">
 
-      <h1 ng-bind="hello"></h1>
-
-    <!--   <div ng-repeat ="todo in todoList">
-        <h5>{{todo.text}}</h5>
-      </div>
- -->
-      <div>Storage {{$storage.todoIndex}} </div>
-
-      <div>Todos {{$storage.toDos}}
+      <h1 ng-bind="$storage.toDos.length || 'All Done!'"></h1>
 
       <div ng-repeat = "todo in $storage.toDos">
-        <h5>{{todo.text}} </h5>
+        <div ng-if = "todo !== null"
+          style = "border: solid black 3px; padding:10px; margin:10px; width:70%">
+          <h5>{{todo.text}}</h5>
+          <label>
+            <input type="checkbox" ng-click="destroyTodo(todo)">
+          </label>
+        </div>
       </div>
 
       <form>

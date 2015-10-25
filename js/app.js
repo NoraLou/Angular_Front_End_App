@@ -1,34 +1,15 @@
 
 (function(){
-  angular.module('myApp',['ngStorage','taskController', 'todoService' ]);
+  angular.module('myApp',['ngStorage','mainController', 'todoService' ]);
 
-  angular.module('taskController', [])
+  angular.module('mainController', [])
 
-    .controller('taskController',['$scope', '$localStorage', 'Todos', function($scope, $localStorage, Todos){
-
-    // $scope.todoList = Todos.load();
-
-    // var todoList = Todos.load();
-
-    // for(var i= 0; i < todoList.length;
-
-    // console.log("todoList : ", todoList);
-
-    // $scope.storage = $localStorage;
-    // console.log("$localStorage  ", $localStorage)
+    .controller('mainController',['$scope', '$localStorage', 'Todos', function($scope, $localStorage, Todos){
 
     $scope.$storage = $localStorage.$default({
-        todoIndex : 5,
-        toDos : [
-          { text: "walk the dog", done: false},
-          { text: "wash my hair", done: false},
-          { text: "go to the park", done: false}
-        ]
+        todoIndex : 0,
+        toDos : [ ]
     });
-
-    // $scope.
-
-    // $scope.todoList = todoList;
 
     $scope.formData = {};
 
@@ -39,19 +20,14 @@
         text: text,
         done: false
       })
+    };
 
+
+
+    $scope.destroyTodo = function(todo){
+      $localStorage.toDos.splice($localStorage.toDos.indexOf(todo),1);
     }
 
-    $scope.removeTodo = function(text){
-
-    }
-
-
-
-
-    // $scope.hello = Todos.hello
-
-    // $scope.createToDo = Todos.createToDo
 
 
   }]);
