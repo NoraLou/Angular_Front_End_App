@@ -11,17 +11,11 @@
 
     var init = Todos.load()
 
-
-    //should immediately load the todos from storage, then in a promise function set them to the scope
-    $scope.formData = '';
+    $scope.formData = ' ';
 
     $scope.hello = Todos.hello
 
     $scope.createToDo = Todos.createToDo
-
-
-    //REMINDER
-    //loading(init, 'loading');
 
   }]);
 
