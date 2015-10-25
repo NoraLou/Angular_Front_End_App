@@ -34,7 +34,7 @@ angular.module('todoService', [])
     //make a new todo
       var counter = Number(window.localStorage.getItem('toDosIndex')) + 1
 
-      console.log("text", text);
+      console.log("text", text)
 
       var toDoEntry = {
         text : text,
@@ -43,16 +43,25 @@ angular.module('todoService', [])
       }
 
       console.log(toDoEntry);
-
       //add a way to update display
 
       window.localStorage.setItem('toDosIndex', counter);
       window.localStorage.setItem('toDo:'+ toDoEntry.id, JSON.stringify(toDoEntry));
-
       console.log(localStorage);
+      self.load()
 
     };
 
   return self;
 
   });
+
+
+
+
+
+
+
+
+
+

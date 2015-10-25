@@ -1,10 +1,10 @@
 
 (function(){
-  angular.module('myApp',[ 'taskController', 'todoService' ]);
+  angular.module('myApp',['ngStorage','taskController', 'todoService' ]);
 
   angular.module('taskController', [])
 
-    .controller('taskController',['$scope', 'Todos', function($scope, Todos){
+    .controller('taskController',['$scope', '$localStorage', 'Todos', function($scope, Todos){
 
     // $scope.todoList = Todos.load();
 
@@ -13,6 +13,8 @@
     // for(var i= 0; i < todoList.length;
 
     console.log("todoList : ", todoList);
+
+    $
 
     $scope.todoList = todoList;
 
