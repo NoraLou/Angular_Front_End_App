@@ -4,27 +4,54 @@
 
   angular.module('taskController', [])
 
-    .controller('taskController',['$scope', '$localStorage', 'Todos', function($scope, Todos){
+    .controller('taskController',['$scope', '$localStorage', 'Todos', function($scope, $localStorage, Todos){
 
     // $scope.todoList = Todos.load();
 
-    var todoList = Todos.load();
+    // var todoList = Todos.load();
 
     // for(var i= 0; i < todoList.length;
 
-    console.log("todoList : ", todoList);
+    // console.log("todoList : ", todoList);
 
-    $
+    // $scope.storage = $localStorage;
+    // console.log("$localStorage  ", $localStorage)
 
-    $scope.todoList = todoList;
+    $scope.$storage = $localStorage.$default({
+        todoIndex : 5,
+        toDos : [
+          { text: "walk the dog", done: false},
+          { text: "wash my hair", done: false},
+          { text: "go to the park", done: false}
+        ]
+    });
+
+    // $scope.
+
+    // $scope.todoList = todoList;
 
     $scope.formData = {};
 
     $scope.formData.text = '';
 
-    $scope.hello = Todos.hello
+    $scope.createToDo = function(text){
+      $scope.$storage.toDos.push({
+        text: text,
+        done: false
+      })
 
-    $scope.createToDo = Todos.createToDo
+    }
+
+    $scope.removeTodo = function(text){
+
+    }
+
+
+
+
+    // $scope.hello = Todos.hello
+
+    // $scope.createToDo = Todos.createToDo
 
 
   }]);

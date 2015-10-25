@@ -16,10 +16,8 @@ angular.module('todoService', [])
           var toDoList = [], i, key;
           for(i = 0; i < window.localStorage.length; i++){
             key = window.localStorage.key(i);
-            (console.log(key));
             if(/toDo:\d+/.test(key)){
               toDoList.push(JSON.parse(window.localStorage.getItem(key)));
-              console.log(JSON.parse(window.localStorage.getItem(key)))
             }
           }
          // console.log("toDoList ", toDoList);
@@ -47,8 +45,6 @@ angular.module('todoService', [])
 
       window.localStorage.setItem('toDosIndex', counter);
       window.localStorage.setItem('toDo:'+ toDoEntry.id, JSON.stringify(toDoEntry));
-      console.log(localStorage);
-      self.load()
 
     };
 
