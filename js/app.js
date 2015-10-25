@@ -11,7 +11,9 @@
 
     var init = Todos.load()
 
-    $scope.formData = ' ';
+    $scope.formData = {};
+
+    $scope.formData.text = '';
 
     $scope.hello = Todos.hello
 

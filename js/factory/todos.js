@@ -13,9 +13,7 @@ angular.module('todoService', [])
         window.localStorage.setItem('toDosIndex', 0);
         console.log('window.localStorage  :', window.localStorage);
       }else{
-        console.log(console.log("already here"));
         console.log(window.localStorage);
-        // console.log("toDos.index ", toDos.index)
       }
 
     };
@@ -23,14 +21,13 @@ angular.module('todoService', [])
     self.createToDo = function(formData){
     //make a new todo
       var counter = Number(window.localStorage.getItem('toDosIndex')) + 1
-      console.log( "counter ", counter)
+
       console.log("formData ", formData)
 
       var toDoEntry = {
         text : formData,
         id : counter
       }
-
       window.localStorage.setItem('toDosIndex', counter);
       console.log(toDoEntry);
 

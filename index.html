@@ -17,25 +17,15 @@
 
   <body>
     <div ng-controller = "taskController">
-
       <h1 ng-bind="hello"></h1>
-
       <form>
-
-        <input type="text" class="" placeholder="" ng-model="formData">
-
+        <input type="text" class="" placeholder="" ng-model="formData.text">
         <button style = "margin-top:50px"
          type = "submit"
-         ng-click = "createToDo()">
+         ng-click = "createToDo(formData.text)">
          ADD SOME TASKS
         </button>
-
       </form>
-
-    </div>
-
-
-
     </div>
   </body>
 
