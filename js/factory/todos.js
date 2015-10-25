@@ -3,21 +3,39 @@ angular.module('todoService', [])
 
     var self = {};
     //might not need this global copy
-    var Todos = {};
+    var toDos = {};
 
     self.hello = "have a cup of coffee";
 
     self.load = function(){
 
-      if(window.localStorage.getItem('todosIndex') === null){
-        window.localStorage.setItem('todosIndex', Todos.index = 0);
+      if(window.localStorage.getItem('toDosIndex') === null){
+        window.localStorage.setItem('toDosIndex', 1);
+        toDos['index'] = 1
+        console.log("toDos.index ", toDos.index)
         console.log('window.localStorage  :', window.localStorage);
       }else{
-        console.log('already initiated !!')
+        console.log(console.log("already here"));
+        console.log(window.localStorage);
+        console.log("toDos.index ", toDos.index)
       }
 
-    }//load
+    };
 
+    self.createToDo = function(formData){
+    //make a new todo
+      var counter = toDos.index
+      console.log("toDos  ", toDos);
+      console.log("toDos.index ", toDos.index)
+      console.log("counter", counter)
+
+      var todoEntry = {
+        text : formData,
+        id : counter
+      }
+
+      console.log(todoEntry);
+    };
 
 
 
