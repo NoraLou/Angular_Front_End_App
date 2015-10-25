@@ -17,7 +17,14 @@
 
   <body>
     <div ng-controller = "taskController">
+
       <h1 ng-bind="hello"></h1>
+
+      <div ng-repeat ="todo in todoList">
+        <h5>{{todo.text}}</h5>
+      </div>
+
+
       <form>
         <input type="text" class="" placeholder="" ng-model="formData.text">
         <button style = "margin-top:50px"
