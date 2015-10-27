@@ -1,7 +1,79 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,100,500);
 
-$primaryColor:gainsboro;
+/****Variables***********/
 
-$primaryColor:gainsboro;
+$background:gainsboro;
+$lightBlue : #b5e9f2
+
+
+$fontFamily:Roboto;
+$fontFamily:Arial,sans-serif!default;
+
+$cardShadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+$raisedShadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+
+
+/*Theme******************/
+
+body{
+  background:$background;
+}
+
+.container{
+  margin: auto;
+  text-align:center;
+}
+
+.center{
+  display:inline
+}
+
+.main{
+  width:80%;
+}
+
+.grey-btn {
+  background-color: gainsboro;
+  padding: 10px;
+  color: black;
+  letter-spacing: 2px;
+  margin: 0 2% 0 2%;
+  border-radius: 5px;
+  transition: background-color .5s ease;
+}
+
+
+.form{
+  width:100%;
+  background-color: ;
+}
+
+.todo-item {
+  background-color: #FFFEFF;
+  height: 100px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 16px;
+  box-shadow: $cardShadow;
+  border-radius: 2px;
+  transition: all 0.2s ease-in-out;
+  &:hover{
+    cursor: pointer;
+    box-shadow: $raisedShadow;
+  }
+}
+
+
+
+/*ResetValues***********/
+
+* {
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
 
 input{
   -webkit-appearance: none;
@@ -20,24 +92,78 @@ button{
   padding: 0;
   border: 0;
   background : transparent;
-  font-family : Helvetica;
   font-size: 1em;
   cursor: pointer;
   outline :none;
+  &:focus{
+    outline:0;
+  }
 }
 
-button:focus {outline:0;}
-
-body {
-  background: gainsboro
+.circle{
+   border-radius: 50%;
+   background-color:green;
+   width: 50px;
+   height: 50px;
+   text-align:center;
 }
 
-.mainContainer{
-  width : 80%;
-  margin: auto;
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    top: 40%;
+    background-color: #222;
+    opacity: 0;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1em;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    z-index: 2000;
+    transition: opacity 0.3s ease;
 }
 
-.centerDiv{
-  display:block;
-  margin:auto;
+.carousel-prev {
+    left: 4%;
 }
+
+.carousel-next {
+    right: 4%;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

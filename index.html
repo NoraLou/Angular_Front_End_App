@@ -12,35 +12,53 @@
     <link rel="stylesheet" href="css/style.css">
 
 
-   <script src= "js/vendor/angular.min.js"></script>
+   <script src="js/vendor/angular.min.js"></script>
    <script src="js/factory/todos.js"></script>
    <script src="js/app.js"></script>
    <script src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
   </head>
 
   <body>
-    <div class = "mainContainer">
-      <div ng-controller = "mainController">
+
+    <div ng-controller = "mainController">
+
+      <div class= "container form" style = "text-align:center">
+        <form style= "display:block; margin:auto; padding:50px;">
+          <input style = "width:60%; height:80px;" type="text" class="" placeholder="what to you need to do today?" ng-model="formData.text">
+            <br>
+
+            <button class = ""
+             type = "submit"
+             ng-click = "createToDo(formData)">
+
+            </button>
+
+            <div class="">
+              <button class = "circle" style= "text-align:center">
+                <i class="fa fa-plus" style = "color:white; font-size:30px;"></i>
+              </button>
+            </div>
+
+
+        </form>
+      </div> <!--container-form-->
+
+
+      <div class = "container main">
         <h1 ng-bind="$storage.toDos.length || 'All Done!'"></h1>
 
         <div ng-repeat = "todo in $storage.toDos">
 
-          <div style = "border: solid black 3px;" class = "">
+          <div style = "" class = "todo-item">
             <div><!--ng-click = "formData.text = todo.text"-->
               <h5 ng-bind = "todo.text"></h5>
             </div>
             <i class="fa fa-trash" ng-click="destroyTodo(todo)"></i>
           </div>
+
         </div><!--ng-repeat-->
-        <form>
-          <input type="text" class="" placeholder="" ng-model="formData.text">
-          <button style = "margin-top:50px"
-           type = "submit"
-           ng-click = "createToDo(formData)">
-           ADD SOME TASKS
-          </button>
-        </form>
-      </div>
-    </div><!--mainContainer-->
+      </div><!--mainContainer-->
+    </div><!--mainController-->
+
   </body>
 </html>

@@ -13,9 +13,13 @@
 
     $scope.formData = {};
 
-    $scope.formData.text = '';
+    $scope.formData.text = ' ';
 
     $scope.createToDo = function(formData){
+      console.log(formData.text)
+      if(formData.text == ' ' || null){
+        return;
+      }
       $scope.$storage.toDos.push({
         text: formData.text,
         done: false
