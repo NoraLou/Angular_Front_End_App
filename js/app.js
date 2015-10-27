@@ -4,7 +4,7 @@
 
   angular.module('mainController', [])
 
-    .controller('mainController',['$scope', '$localStorage', 'Todos', function($scope, $localStorage, Todos){
+    .controller('mainController',['$scope', '$localStorage',  'Todos', function($scope, $localStorage, Todos){
 
     $scope.$storage = $localStorage.$default({
         todoIndex : 0,
@@ -15,20 +15,18 @@
 
     $scope.formData.text = '';
 
-    $scope.createToDo = function(text){
+    $scope.createToDo = function(formData){
       $scope.$storage.toDos.push({
-        text: text,
+        text: formData.text,
         done: false
       })
+      $scope.formData.text = ' ';
     };
-
 
 
     $scope.destroyTodo = function(todo){
       $localStorage.toDos.splice($localStorage.toDos.indexOf(todo),1);
-    }
-
-
+    };
 
   }]);
 

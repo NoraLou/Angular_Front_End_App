@@ -18,29 +18,31 @@
   </head>
 
   <body>
+
     <div ng-controller = "mainController">
-
       <h1 ng-bind="$storage.toDos.length || 'All Done!'"></h1>
-
       <div ng-repeat = "todo in $storage.toDos">
-        <div ng-if = "todo !== null"
-          style = "border: solid black 3px; padding:10px; margin:10px; width:70%">
-          <h5>{{todo.text}}</h5>
+        <div
+          style = "border: solid black 3px; padding:10px; margin:10px; width:70%"
+          >
+          <div><!--ng-click = "formData.text = todo.text"-->
+            <h5 ng-bind = "todo.text"></h5>
+          </div>
           <label>
             <input type="checkbox" ng-click="destroyTodo(todo)">
           </label>
         </div>
-      </div>
+      </div><!--ng-repeat-->
 
       <form>
         <input type="text" class="" placeholder="" ng-model="formData.text">
         <button style = "margin-top:50px"
          type = "submit"
-         ng-click = "createToDo(formData.text)">
+         ng-click = "createToDo(formData)">
          ADD SOME TASKS
         </button>
       </form>
+
     </div>
   </body>
-
 </html>
