@@ -1,0 +1,43 @@
+
+$primaryColor:gainsboro;
+
+$primaryColor:gainsboro;
+
+input{
+  -webkit-appearance: none;
+}​
+
+input[type=search] {
+  -webkit-appearance: none;
+}
+
+input[type=text] {
+  -webkit-appearance: searchfield;
+}
+
+button{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background : transparent;
+  font-family : Helvetica;
+  font-size: 1em;
+  cursor: pointer;
+  outline :none;
+}
+
+button:focus {outline:0;}
+
+body {
+  background: gainsboro
+}
+
+.mainContainer{
+  width : 80%;
+  margin: auto;
+}
+
+.centerDiv{
+  display:block;
+  margin:auto;
+}
