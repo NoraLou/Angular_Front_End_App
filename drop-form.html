@@ -1,0 +1,18 @@
+<div class= "container form" id="drop-form">
+  <form>
+   <h2>Add a List Item ..</h2>
+    <input type="text" class="input-grey" placeholder="what to you need today?" ng-model="formData.text">
+      <br>
+      <button class = "add-btn"
+       type = "submit"
+       ng-click = "createToDo(formData)">
+       Add
+      </button>
+  </form>
+  <div class="peek">
+    <button class = "circle" id = "dropButton"
+      ng-click = "">
+      <i class="fa fa-plus" style = "color:white; font-size:30px;"></i>
+    </button>
+  </div>
+</div> <!--container-form-->

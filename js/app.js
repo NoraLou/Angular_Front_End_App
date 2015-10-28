@@ -1,10 +1,16 @@
 
 (function(){
-  angular.module('myApp',['ngStorage','mainController', 'todoService' ]);
+  var myApp = angular.module('myApp',['ngStorage','mainController', 'todoService', 'dropForm']);
 
   angular.module('mainController', [])
 
     .controller('mainController',['$scope', '$localStorage',  'Todos', function($scope, $localStorage, Todos){
+
+    $scope.fullView = false;
+
+    // $scope.toggleView = function(){
+    //   $('#drop-form')style.transform = 'translateY(200px)'
+    // }
 
     $scope.$storage = $localStorage.$default({
         todoIndex : 0,
