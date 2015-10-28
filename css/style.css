@@ -20,7 +20,9 @@ body {
 
 #drop-form {
   width: 100%;
-  margin-top: -200px; }
+  margin-top: -200px;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease; }
 
 .main {
   width: 80%;
@@ -42,7 +44,7 @@ input[type=search] {
 .peek {
   position: relative;
   height: 100px;
-  background-color: yellow;
+  background-color: #b5e9f2;
   width: 80%;
   margin: auto; }
   .peek .circle {
