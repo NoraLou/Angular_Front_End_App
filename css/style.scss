@@ -1,5 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,300,100,500);
 
+@import url(https://raw.githubusercontent.com/daneden/animate.css/master/source/bouncing_entrances/bounceInUp.css);
+
 /****Variables***********/
 
 $background:gainsboro;
@@ -31,6 +33,47 @@ body{
 }
 
 
+div.ng-hide-add,
+div.ng-hide-remove {
+    /* this needs to be here to make it visible during the animation
+       since the .ng-hide class is already on the element rendering
+       it as hidden. */
+    display:block!important;
+}
+
+
+.dropped{
+  transform:translateY('0px')
+
+}
+
+.notDropped{
+  transform:translateY('200px')
+}
+
+.transition{
+  transition: all 1s ease-in-out;
+}
+
+div.ng-hide-remove {
+    /*come into view */
+
+}
+
+div.ng-hide-remove-active {
+
+}
+
+div.ng-hide-add {
+
+}
+
+
+div.ng-hide-add-active {
+
+}
+
+
 
 .container{
   margin: auto;
@@ -43,21 +86,15 @@ body{
 }
 
 #drop-form{
-
   width:100%;
   transform : translateY(-200px);
   -webkit-transition: -webkit-transform 0.2s ease;
   transition: transform 0.2s ease;
 }
 
-.ng-hide-add{
 
-}
 
-.ng-hide-remove{
-
-}
-
+ /*margin-top:-200px;*/
 
 .visible{
 
