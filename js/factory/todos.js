@@ -5,12 +5,24 @@ angular.module('todoService', ['ngStorage'])
     self.initStorage = $localStorage.$default({
       todoIndex:0,
       toDos: [ ]
-
-
-
-
-
     });
+
+    self.createToDo = function(formData){
+      if(formData.text == ' ' || null){
+        return;
+      }
+
+      self.initStorage.toDos.push({
+        text: formData.text,
+        done: false
+      })
+    };
+
+    self.destroyTodo = function(todo){
+      self.initStorage.toDos.splice($localStorage.toDos.indexOf(todo),1);
+    };
+
+    //self.updateTodo
 
 
   return self;

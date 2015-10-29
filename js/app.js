@@ -12,22 +12,11 @@
 
     $scope.formData.text = ' ';
 
-    $scope.createToDo = function(formData){
-      console.log(formData.text)
-      if(formData.text == ' ' || null){
-        return;
-      }
-      $scope.$storage.toDos.push({
-        text: formData.text,
-        done: false
-      })
-      $scope.formData.text = ' ';
-    };
+    $scope.createToDo = Todos.createToDo;
 
+    $scope.formData.text = ' ';
 
-    $scope.destroyTodo = function(todo){
-      $localStorage.toDos.splice($localStorage.toDos.indexOf(todo),1);
-    };
+    $scope.destroyTodo = Todos.destroyTodo;
 
   }]);
 
