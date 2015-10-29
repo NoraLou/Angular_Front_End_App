@@ -1,10 +1,13 @@
-
 (function(){
-  var myApp = angular.module('myApp',['ngStorage','ngAnimate','mainController', 'todoService', 'dropForm']);
+  var myApp = angular.module('myApp',['ngStorage','ngAnimate','ngRoute',
+
+    'mainController', 'todoService', 'myValidate','formController']);
 
   angular.module('mainController', [])
 
-    .controller('mainController',['$scope', '$localStorage',  'Todos', function($scope, $localStorage, Todos){
+    .controller('mainController',['$scope', '$localStorage', 'Todos', function($scope, $localStorage, Todos){
+
+      console.log('mainController Todos', Todos)
 
     $scope.$storage = Todos.initStorage;
 
@@ -18,7 +21,7 @@
 
     $scope.destroyTodo = Todos.destroyTodo;
 
-  }]);
+  }])
 
 })();
 

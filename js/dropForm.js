@@ -5,8 +5,9 @@ angular.module('dropForm', [])
       scope:true,
       restrict:'AE',
       templateUrl:'drop-form.html',
+      require:'ngModel',
 
-      link: function(scope, elem, attr){
+      link: function(scope, elem, attr, ngModel){
 
         var dropButton = angular.element(document.querySelector('#drop-button'));
 
