@@ -1,19 +1,27 @@
-<div ng-hide ="!dropped" class = "canTransform">
-  <form id ="drop-form" class= "container form">
-   <h2>Add a List Item ..</h2>
-    <input type="text" class="input-grey" placeholder="what to you need today?" ng-model="formData.text">
+<div id = "drop-form">
+  <div ng-hide ="!dropped" >
+    <form name = "todoAdd" class= "container form">
+     <h2>Add a List Item ..</h2>
+      <input type="text"
+        class="input-grey"
+        ng-model="formData.text"
+        name= "todo"
+        required >
+      <span ng-show="todAdd.todo.$error.required">
+        <h5>you need to enter text </h5>
+      </span>
       <br>
-      <button class = "add-btn"
-       type = "submit"
-       ng-click = "createToDo(formData)">
-       Add
+      <button class = "add-btn" style = "margin-top:50px"
+      type = "submit"
+      ng-click = "createToDo(formData)">
+      Add
       </button>
-  </form>
-</div>
-
-<div id="peek">
-  <button class = "circle" id = "drop-button"
-    ng-click = "toggleForm()">
-    <i class="fa fa-plus" style = "color:white; font-size:30px;"></i>
-  </button>
+    </form>
+  </div>
+  <div id="peek">
+    <button class = "circle" id = "drop-button"
+      ng-click = "dropped = !dropped">
+      <i class="fa fa-plus" style = "color:white; font-size:30px;"></i>
+    </button>
+  </div>
 </div>

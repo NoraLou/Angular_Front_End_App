@@ -22,28 +22,56 @@
 
   <body ng-controller = "mainController">
 
-      <div drop-form style = "z-index:9"> </div>
+    <div id = "drop-form">
 
-      <div class = "container main" style = "z-index:1">
+      <div ng-hide ="!dropped">
 
-        <div ng-if= "!$storage.toDos.length" style="z-index:1">
-          <div style= "z-index:1"> <!--#f2e562-->
-            <!-- <img src = "nojobsleft.svg" style = "width: 400px"> -->
-          </div>
-        </div>
+<!-- ng-submit = "createToDo(formData)" -->
 
-        <h1 ng-bind="$storage.toDos.length" style = "z-index:1"></h1>
-        <div ng-repeat = "todo in $storage.toDos" style = "z-index:1">
-          <div style = "" class = "todo-item">
-            <div>
-              <h5 ng-bind = "todo.text"></h5>
-            </div>
-            <i class="fa fa-trash" ng-click="destroyTodo(todo)"></i>
-          </div>
-        </div>
+        <form name = "todoAdd"
+          class= "container form">
+         <h2>Add a List Item ..</h2>
+          <input type="text"
+            class="input-grey"
+            ng-model="formData.text"
+            name="todo"
+            placeholder = "enter a todo"
+            required/>
+
+          <span ng-if="todoAdd.todo.$error.required">
+            <h5>you need to enter text </h5>
+          </span>
+        </form>
+
+      </div><!--ng-hide-->
 
 
+
+      <div id="peek">
+        <button class = "circle" id = "drop-button"
+          ng-click = "dropped = !dropped">
+          <i class="fa fa-plus" style = "color:white; font-size:30px;"></i>
+        </button>
       </div>
+    </div><!--drop-form-->
+
+
+    <div class = "container main" style = "z-index:1">
+      <div ng-if= "!$storage.toDos.length" style="z-index:1">
+        <div style= "z-index:1"> <!--#f2e562-->
+          <!-- <img src = "nojobsleft.svg" style = "width: 400px"> -->
+        </div>
+      </div>
+      <h1 ng-bind="$storage.toDos.length" style = "z-index:1"></h1>
+      <div ng-repeat = "todo in $storage.toDos" style = "z-index:1">
+        <div style = "" class = "todo-item">
+          <div>
+            <h5 ng-bind = "todo.text"></h5>
+          </div>
+          <i class="fa fa-trash" ng-click="destroyTodo(todo)"></i>
+        </div>
+      </div>
+    </div>
 
   </body>
 </html>

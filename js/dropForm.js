@@ -19,10 +19,11 @@ angular.module('dropForm', [])
         scope.toggleForm = function(){
           if(scope.dropped == false){
              scope.dropped = true;
-             dropForm.css({ 'transform' : 'translateY(0px)'});
+             // dropForm.css({ 'transform' : 'translateY(0px)'});
           }else{
             scope.dropped = false;
-            dropForm.css({'transform' : 'translateY(-200px)'});
+            // dropForm.css({'transform' : 'translateY(-200px)'});
+
           }
         }
       }
