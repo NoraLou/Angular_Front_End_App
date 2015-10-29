@@ -2,6 +2,7 @@ angular.module('dropForm', [])
   .directive('dropForm', function(){
 
     return{
+      scope:true,
       restrict:'AE',
       templateUrl:'drop-form.html',
 

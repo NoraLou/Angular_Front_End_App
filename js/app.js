@@ -6,16 +6,7 @@
 
     .controller('mainController',['$scope', '$localStorage',  'Todos', function($scope, $localStorage, Todos){
 
-    $scope.fullView = false;
-
-    // $scope.toggleView = function(){
-    //   $('#drop-form')style.transform = 'translateY(200px)'
-    // }
-
-    $scope.$storage = $localStorage.$default({
-        todoIndex : 0,
-        toDos : [ ]
-    });
+    $scope.$storage = Todos.initStorage;
 
     $scope.formData = {};
 
