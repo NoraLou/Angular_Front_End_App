@@ -41,16 +41,14 @@
           class= "container form"
           ng-submit= "form.submit(todoAdd.$valid, formData)">
          <h2>Add a List Item ..</h2>
+
           <input type="text"
+
             class="input-grey"
             ng-model="formData.text"
             name="todo"
-            placeholder = "enter a todo"
+            placeholder = "Please enter a task ..."
             required/>
-
-          <span ng-if="todoAdd.todo.$error.required">
-            <h5>you need to enter text </h5>
-          </span>
         </form>
       </div>
 

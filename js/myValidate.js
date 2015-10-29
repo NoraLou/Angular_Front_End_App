@@ -5,7 +5,14 @@ angular.module('myValidate', [])
       scope:true,
       require:'ngModel',
       link: function(scope, element, attrs, ngModel){
-
+        ngModel.$validators.myValiate = function(value){
+          var status = true;
+          if(value == ' ' || undefined){
+            status = false;
+          }
+          return status;
+          console.log("do i work*******?  ", status);
+        }//validate
       }
     }
 
