@@ -1,4 +1,4 @@
-<div class= "container form" id="drop-form">
+<div ng-hide ="!dropped" class= "container form" id="drop-form" style = 'z-index:9'>
   <form>
    <h2>Add a List Item ..</h2>
     <input type="text" class="input-grey" placeholder="what to you need today?" ng-model="formData.text">
@@ -9,10 +9,11 @@
        Add
       </button>
   </form>
-  <div class="peek">
-    <button class = "circle" id = "drop-button"
-      ng-click = "toggleForm()">
-      <i class="fa fa-plus" style = "color:white; font-size:30px;"></i>
-    </button>
-  </div>
-</div> <!--container-form-->
+</div>
+
+<div id="peek">
+  <button class = "circle" id = "drop-button"
+    ng-click = "toggleForm()">
+    <i class="fa fa-plus" style = "color:white; font-size:30px;"></i>
+  </button>
+</div>

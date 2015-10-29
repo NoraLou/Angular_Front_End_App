@@ -1,6 +1,6 @@
 
 (function(){
-  var myApp = angular.module('myApp',['ngStorage','mainController', 'todoService', 'dropForm']);
+  var myApp = angular.module('myApp',['ngStorage','ngAnimate','mainController', 'todoService', 'dropForm']);
 
   angular.module('mainController', [])
 

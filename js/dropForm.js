@@ -12,33 +12,21 @@ angular.module('dropForm', [])
 
         var dropForm = angular.element(document.querySelector('#drop-form'));
 
+        var peek = angular.element(document.querySelector('.peek'))
+
         scope.dropped = false;
 
         scope.toggleForm = function(){
           if(scope.dropped == false){
-            // dropForm.css({'margin-top' : '0px'});
-            dropForm.css({'transform' : 'translateY(0px)'});
-            scope.dropped = true;
+             scope.dropped = true;
+             dropForm.css({ 'transform' : 'translateY(0px)'});
           }else{
-            dropForm.css({'transform' : 'translateY(-200px)'});
             scope.dropped = false;
+            dropForm.css({'transform' : 'translateY(-200px)'});
           }
-        }//test
+        }
       }
     }
-
   });
-
-
-//var dropForm = elem.find('#drop-form');
-// dropForm.style.webkitTransform= 'translateY(200px)'
-// dropForm.style.transform = 'translateY(200px)'
-
-// dropButton.on('click', function(formToOpen){
-        //   return function(){
-        //     console.log('dropForm  ', dropForm);
-        //     dropForm.style.webkitTransform= 'translateY(200px)'
-
-        // })(dropForm);
 
 

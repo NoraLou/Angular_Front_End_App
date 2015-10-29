@@ -30,6 +30,8 @@ body{
   background:$background;
 }
 
+
+
 .container{
   margin: auto;
   text-align:center;
@@ -41,24 +43,32 @@ body{
 }
 
 #drop-form{
+
   width:100%;
   transform : translateY(-200px);
   -webkit-transition: -webkit-transform 0.2s ease;
   transition: transform 0.2s ease;
-  box-shadow: $raisedShadow;
 }
 
-.hr{
-  height: 1px;
-  color:black
+.ng-hide-add{
+
+}
+
+.ng-hide-remove{
+
+}
+
+
+.visible{
 
 }
 
 .main{
   width:80%;
-  top:20%;
   position:relative;
 }
+
+ /*margin-top: -200px */
 
 
 input[type=search] {
@@ -77,11 +87,11 @@ input[type=search] {
    }
 }
 
-.peek{
+#peek{
   position:relative;
   height:100px;
   background-color:$headerColor;
-  width:80%;
+  width:100%;
   margin:auto;
 
   .circle{
