@@ -16,6 +16,9 @@ angular.module('todoService', ['ngStorage'])
         text: formData.text,
         done: false
       })
+
+      formData.text = ' '
+
     };
 
     self.destroyTodo = function(todo){
@@ -23,7 +26,6 @@ angular.module('todoService', ['ngStorage'])
     };
 
     //self.updateTodo
-
 
   return self;
 

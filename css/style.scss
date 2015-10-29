@@ -42,20 +42,22 @@ body{
 
 #drop-form{
   width:100%;
-  margin-top:-200px;
+  transform : translateY(-200px);
   -webkit-transition: -webkit-transform 0.2s ease;
   transition: transform 0.2s ease;
+  box-shadow: $raisedShadow;
 }
 
-.visible{
+.hr{
+  height: 1px;
+  color:black
 
 }
 
 .main{
   width:80%;
-  position:relative;
   top:20%;
-
+  position:relative;
 }
 
 

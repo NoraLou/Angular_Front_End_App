@@ -20,14 +20,19 @@ body {
 
 #drop-form {
   width: 100%;
-  margin-top: -200px;
+  transform: translateY(-200px);
   -webkit-transition: -webkit-transform 0.2s ease;
-  transition: transform 0.2s ease; }
+  transition: transform 0.2s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
+
+.hr {
+  height: 1px;
+  color: black; }
 
 .main {
   width: 80%;
-  position: relative;
-  top: 20%; }
+  top: 20%;
+  position: relative; }
 
 input[type=search] {
   -webkit-appearance: none; }

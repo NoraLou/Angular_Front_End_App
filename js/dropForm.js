@@ -15,12 +15,12 @@ angular.module('dropForm', [])
         scope.dropped = false;
 
         scope.toggleForm = function(){
-          console.log( 'scope.dropped  ', scope.dropped)
           if(scope.dropped == false){
-            dropForm.css({'margin-top' : '0px'});
+            // dropForm.css({'margin-top' : '0px'});
+            dropForm.css({'transform' : 'translateY(0px)'});
             scope.dropped = true;
           }else{
-            dropForm.css({'margin-top' : '-200px'});
+            dropForm.css({'transform' : 'translateY(-200px)'});
             scope.dropped = false;
           }
         }//test

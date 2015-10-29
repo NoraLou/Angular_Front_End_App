@@ -12,7 +12,7 @@
 
     $scope.formData.text = ' ';
 
-    $scope.createToDo = Todos.createToDo;
+    $scope.createToDo = Todos.createToDo
 
     $scope.formData.text = ' ';
 
