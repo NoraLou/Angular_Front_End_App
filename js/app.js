@@ -1,5 +1,5 @@
 (function(){
-  var myApp = angular.module('myApp',['ngStorage','ngAnimate','ngRoute','todoService', 'trimWords', 'myApp.directives'])
+  var myApp = angular.module('myApp',['ngStorage','todoService', 'trimWords', 'myApp.directives'])
 
     .controller('mainController',['$scope', '$localStorage', 'Todos',function($scope, $localStorage, Todos, trimWordsFilter){
 

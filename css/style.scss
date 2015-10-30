@@ -1,7 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
 
-@import url(https://raw.githubusercontent.com/daneden/animate.css/master/source/bouncing_entrances/bounceInUp.css);
-
 /****Variables***********/
 
 $background:gainsboro;
@@ -9,18 +7,44 @@ $headerColor : #b5e9f2;
 $focusColor: #f9f36d;
 $gold:#ffb94d;
 $lightRed:#f95c5c;
-
 $lightGreen: #47CF73;
 $activeAdd: darken($lightGreen, 20%);
-
-
-
 $cardShadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 $raisedShadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 
 
+/*****MixIns*****************/
 
-/*Theme******************/
+@mixin media($queryString){
+    @media #{$queryString} {
+      @content;
+    }
+}
+
+/******ResetValues*******/
+
+* {
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  list-style:none;
+  font-weight: inherit !important;
+}
+
+button{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background : transparent;
+  font-size: 1em;
+  cursor: pointer;
+  outline :none;
+  &:focus{
+    outline:0;
+  }
+}
+
+/****Theme***********/
 
 body{
   background:$background;
@@ -29,18 +53,29 @@ body{
   letter-spacing:.5px;
 }
 
-h2{padding:10px;}
-
-h4{padding:10px;}
-
+h2,h3,h4{padding:10px;}
 
 .container{
   margin: auto;
   text-align:center;
-  .main{
-    width:80%;
-    position:relative;
+}
+
+.main{
+  width:80%;
+  position:relative;
+  @include media("(max-width: 770px)"){
+    width: 90%;
   }
+}
+
+.no-to-dos{
+  position:relative;
+  display:inline-block;
+  margin:auto;
+  text-align:left;
+  margin-top:30px;
+  color:$lightRed;
+  font-weight: 500px;
 }
 
 img{
@@ -61,11 +96,6 @@ img{
 #drop-form{
   width:100%;
   box-shadow : $raisedShadow;
-}
-
-.main{
-  width:80%;
-  position:relative;
 }
 
 .paddingtop{
@@ -140,10 +170,13 @@ img{
     color:$lightRed;
 
   }
+  @include media("(max-width: 770px)"){
+    margin-top: -20px;
+  }
 }
 
 
-/*******************************************FORM*/
+/****FORM & VALIDATION************/
 
 
 input.input-grey{
@@ -162,10 +195,6 @@ input.input-grey{
   }
 }
 
-/*********************************************REFACTOR*/
-
-
-
 input.input-grey.ng-dirty{
   border:4px solid $lightGreen;
 }
@@ -173,37 +202,6 @@ input.input-grey.ng-dirty{
 input.input-grey.ng-invalid,input.input-grey.input[class*="invalid"],input.input-grey.input.ng-touched[class*="invalid"]{
   border:4px solid $lightRed;
 }
-
-
-
-/*ResetValues***********/
-
-* {
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-  list-style:none;
-  font-weight: inherit !important;
-}
-
-
-
-button{
-  margin: 0;
-  padding: 0;
-  border: 0;
-  background : transparent;
-  font-size: 1em;
-  cursor: pointer;
-  outline :none;
-  &:focus{
-    outline:0;
-  }
-}
-
-
-
-
 
 
 
