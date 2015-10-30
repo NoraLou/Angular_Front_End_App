@@ -1,6 +1,5 @@
 angular.module('myValidate', [])
   .directive('myValidate', function(){
-
     return{
       scope:true,
       require:'ngModel',
@@ -11,8 +10,8 @@ angular.module('myValidate', [])
             status = false;
           }
           return status;
-          console.log("do i work*******?  ", status);
-        }//validate
+
+        }
       }
     }
 

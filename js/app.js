@@ -1,7 +1,7 @@
 (function(){
   var myApp = angular.module('myApp',['ngStorage','ngAnimate','ngRoute',
 
-    'mainController', 'todoService', 'myValidate','formController']);
+    'mainController', 'todoService','formController']);
 
   angular.module('mainController', [])
 
