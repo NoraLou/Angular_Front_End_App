@@ -5,11 +5,13 @@
 /****Variables***********/
 
 $background:gainsboro;
-
 $headerColor : #b5e9f2;
+$focusColor: #f9f36d;
+$gold:#ffb94d;
+$lightRed:#f95c5c;
 
-$addColor: #47CF73;
-$activeAdd: darken($addColor, 20%);
+$lightGreen: #47CF73;
+$activeAdd: darken($lightGreen, 20%);
 
 
 
@@ -72,7 +74,7 @@ img{
 
 .circle{
    border-radius: 50%;
-   background-color:$addColor;
+   background-color:$lightGreen;
    width: 60px;
    height: 60px;
    text-align:center;
@@ -100,57 +102,10 @@ img{
 
 }
 
-.fa{
-  font-size:24px;
-  color:darken($background, 50%)
-}
-
-
-/*******************************************FORM*/
-
-/*input[type=search] {
-  -webkit-appearance: none;
-}*/
-
-.input-grey{
-  -webkit-appearance: none;
-  border-radius: 3px;
-  border: 4px solid #ddd;
-  color: #555;
-  font-size: 17px;
-  padding: 10px 20px;
-  display: inline-block;
-  outline: 0;
-  width: 60%;
-  margin-top: 20px;
-}
-
-/*********************************************REFACTOR*/
-
-input.input-grey.ng-dirty{
-  border:4px solid green;
-}
-
-input.input-grey.ng-invalid{
-  border:4px solid red;
-}
-
-input.input-grey.input[class*="invalid"]{
-  border:4px solid red;
-}
-
-input.input-grey.input.ng-touched[class*="invalid"]{
-  border:4px solid red;
-}
-
-/*.error-input {
-  @extend .input-grey;
-  border:4px solid #e74c3c;
-}*/
-
 .todo-item {
+  position:relative;
   background-color: #FFFEFF;
-  text-align:left;
+  text-align:center;
   height: 100px;
   overflow: hidden;
   position: relative;
@@ -162,6 +117,61 @@ input.input-grey.input.ng-touched[class*="invalid"]{
     cursor: pointer;
     box-shadow: $raisedShadow;
   }
+  >div{
+    padding:20px;
+    max-width:900px;
+    position:relative;
+    margin:auto;
+    text-align:left;
+  }
+}
+
+.fa.fa-plus{
+  font-size:30px;
+  color:white
+}
+
+.fa.fa-trash{
+  font-size:24px;
+  color:darken($background, 50%);
+  float:right;
+  transition:all 0.1s ease;
+  &:hover{
+    color:$lightRed;
+
+  }
+}
+
+
+/*******************************************FORM*/
+
+
+input.input-grey{
+  -webkit-appearance: none;
+  border-radius: 3px;
+  border: 4px solid #ddd;
+  color: #555;
+  font-size: 17px;
+  padding: 10px 20px;
+  display: inline-block;
+  outline: 0;
+  width: 60%;
+  margin-top: 20px;
+  &:focus{
+    border:4px solid $focusColor;
+  }
+}
+
+/*********************************************REFACTOR*/
+
+
+
+input.input-grey.ng-dirty{
+  border:4px solid $lightGreen;
+}
+
+input.input-grey.ng-invalid,input.input-grey.input[class*="invalid"],input.input-grey.input.ng-touched[class*="invalid"]{
+  border:4px solid $lightRed;
 }
 
 
