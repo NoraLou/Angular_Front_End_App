@@ -1,4 +1,4 @@
-angular.module('formController', [])
+
    .controller('formController',['$scope','Todos', function($scope, Todos){
 
    this.createToDo = Todos.createToDo

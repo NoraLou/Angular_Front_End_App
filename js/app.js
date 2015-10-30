@@ -1,9 +1,5 @@
 (function(){
-  var myApp = angular.module('myApp',['ngStorage','ngAnimate','ngRoute',
-
-    'mainController', 'todoService','formController', 'trimWords'])
-
-  angular.module('mainController', [])
+  var myApp = angular.module('myApp',['ngStorage','ngAnimate','ngRoute','todoService', 'trimWords'])
 
     .controller('mainController',['$scope', '$localStorage', 'Todos', function($scope, $localStorage, Todos, trimWordsFilter){
 
@@ -20,6 +16,17 @@
     $scope.destroyTodo = Todos.destroyTodo;
 
   }])
+
+   .controller('formController',['$scope','Todos', function($scope, Todos){
+
+   this.createToDo = Todos.createToDo
+
+   this.submit = function(isValid, data){
+    if(!isValid) return
+    $scope.createToDo(data)
+   }
+
+ }]);
 
 })();
 
