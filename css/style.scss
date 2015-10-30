@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,100,500);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
 
 @import url(https://raw.githubusercontent.com/daneden/animate.css/master/source/bouncing_entrances/bounceInUp.css);
 
@@ -11,8 +11,7 @@ $headerColor : #b5e9f2;
 $addColor: #47CF73;
 $activeAdd: darken($addColor, 20%);
 
-$fontFamily:Roboto;
-$fontFamily:Arial,sans-serif!default;
+
 
 $cardShadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 $raisedShadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
@@ -23,15 +22,29 @@ $raisedShadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 
 body{
   background:$background;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  letter-spacing:.5px;
 }
+
+h2{padding:10px;}
+
+h5{padding:30px;}
+
 
 .container{
   margin: auto;
   text-align:center;
 
-  @at-root .form{
-    background-color:$headerColor;
-    padding-top:50px;
+}
+
+.form{
+  background-color:$headerColor;
+  padding-top:40px;
+  >div{
+    text-align:left;
+    width:60%;
+    margin:auto;
   }
 }
 
@@ -91,6 +104,7 @@ body{
   display: inline-block;
   outline: 0;
   width: 60%;
+  margin-top: 20px;
 }
 
 /*********************************************REFACTOR*/
@@ -141,6 +155,11 @@ input.input-grey.input.ng-touched[class*="invalid"]{
   margin:0;
   padding:0;
   list-style:none;
+  font-weight: inherit !important;
+}
+
+h2,h5{
+  padding:10px;
 }
 
 button{
