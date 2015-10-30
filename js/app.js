@@ -7,8 +7,6 @@
 
     .controller('mainController',['$scope', '$localStorage', 'Todos', function($scope, $localStorage, Todos){
 
-      console.log('mainController Todos', Todos)
-
     $scope.$storage = Todos.initStorage;
 
     $scope.formData = {};

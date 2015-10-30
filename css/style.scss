@@ -29,13 +29,21 @@ body{
 
 h2{padding:10px;}
 
-h5{padding:30px;}
+h4{padding:10px;}
 
 
 .container{
   margin: auto;
   text-align:center;
+  .main{
+    width:80%;
+    position:relative;
+  }
+}
 
+img{
+  height: 400px;
+  width: 400px;
 }
 
 .form{
@@ -56,6 +64,10 @@ h5{padding:30px;}
 .main{
   width:80%;
   position:relative;
+}
+
+.paddingtop{
+  padding-top:60px;
 }
 
 .circle{
@@ -87,6 +99,12 @@ h5{padding:30px;}
   }
 
 }
+
+.fa{
+  font-size:24px;
+  color:darken($background, 50%)
+}
+
 
 /*******************************************FORM*/
 
@@ -158,9 +176,7 @@ input.input-grey.input.ng-touched[class*="invalid"]{
   font-weight: inherit !important;
 }
 
-h2,h5{
-  padding:10px;
-}
+
 
 button{
   margin: 0;
